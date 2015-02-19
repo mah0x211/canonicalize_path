@@ -78,7 +78,7 @@ static char *canonicalize_path( const char *pathname, int *relative )
                 ptr = prev;
             }
         }
-        else if( *ptr == '.' && !c || c == '/' )
+        else if( *ptr == '.' && ( !c || c == '/' ) )
         {
             // pathname: ./bar
             if( ptr[1] == '/' )
