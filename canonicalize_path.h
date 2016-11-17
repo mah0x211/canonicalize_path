@@ -60,7 +60,7 @@ static char *canonicalize_path( const char *pathname, int *relative )
     ptr = rpath;
 
     // preprocessing to reduce conditional branch in while loop
-    if( *ptr == '.' && ( !c || c == '/' ) )
+    if( *ptr == '.' )
     {
         // pathname: ./bar
         if( ptr[1] == '/' ){
