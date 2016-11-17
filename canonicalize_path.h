@@ -42,7 +42,7 @@ static char *canonicalize_path( const char *pathname, int *relative )
     char c = 0;
 
     // prepend slash if pathname is relative-path
-    if( ( *relative = pathname[0] != '/' ) )
+    if( ( *relative = pathname[0] ) != '/' )
     {
         len += 1;
         if( !( rpath = malloc( len + 2 ) ) ){
