@@ -40,7 +40,7 @@ static char *canonicalize_path( const char *pathname, int *relative )
     char *ptr = NULL;
     char *prev = NULL;
     char c = 0;
-    
+
     // prepend slash if pathname is relative-path
     if( ( *relative = pathname[0] != '/' ) )
     {
@@ -56,9 +56,9 @@ static char *canonicalize_path( const char *pathname, int *relative )
     else if( !( rpath = strndup( pathname, len ) ) ){
         return NULL;
     }
-    
+
     ptr = rpath;
-    
+
     // preprocessing to reduce conditional branch in while loop
     if( *ptr == '.' && ( !c || c == '/' ) )
     {
@@ -79,7 +79,7 @@ static char *canonicalize_path( const char *pathname, int *relative )
         c = *ptr;
         ptr++;
     }
-    
+
     while( *ptr )
     {
         if( *ptr == '/' )
@@ -126,7 +126,7 @@ static char *canonicalize_path( const char *pathname, int *relative )
         c = *ptr;
         ptr++;
     }
-    
+
     return rpath;
 }
 
